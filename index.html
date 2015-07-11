@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Cobra API Test</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="test.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <form id="testForm" class="form-horizontal">
+	  <div class="form-group">
+		<label for="inputIP" class="col-sm-4 control-label">IP</label>
+		<div class="col-sm-4">
+		  <input type="text" class="form-control" id="inputIP" placeholder="IP">
+		</div>
+	  </div>
+	  <div class="form-group">
+		<label for="inputPort" class="col-sm-4 control-label">Port</label>
+		<div class="col-sm-4">
+		  <input type="text" class="form-control" id="inputPort" placeholder="Port">
+		</div>
+	  </div>
+	  <div class="form-group">
+		<label for="inputToken" class="col-sm-4 control-label">FB_Token</label>
+		<div class="col-sm-4">
+		  <input type="text" class="form-control" id="inputToken" placeholder="FB_Token">
+		</div>
+	  </div>
+	  <div class="form-group">
+		<div class="col-sm-offset-4 col-sm-10">
+		  <button id="testSubmit" class="btn btn-default">Submit</button>
+		</div>
+	  </div>
+	</form>
+  </body>
+</html>
