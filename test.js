@@ -8,9 +8,9 @@ var history_id;
 $(document).ready(function() {
 	$("#testForm").submit(function(event){
 		event.preventDefault();
-		//ip = $("#inputIP").val();
-		//port = $("#inputPort").val();
-		//FB_token = $("#inputToken").val();
+		ip = $("#inputIP").val();
+		port = $("#inputPort").val();
+		FB_token = $("#inputToken").val();
 		ip = "210.200.13.224";
 		port = "10001";
 		FB_token = "CAAWaCNd8vigBAFlAGVEdIMV8o731fjBfy1QpxmFpBM70GwnO9uVjXiPvVPZCuC5NaX7Pql4kBMJF0ON67xw5I0FRhCqXGqqTyCBimimZBvWFL3P1woffCBJ7g6c0kO7qCvIYOvvOIgamNCjKAnviRzEqvIZC4y52iakeZAPy377ny6YPU9lsXkAK0t546wZBllhR0qqW9LBhyvtIuAZCOy";
@@ -29,7 +29,7 @@ function TestAPI(){
 	GetProfile();
 	PutProfile();
 	CreateDevice();
-	GetDeviecList();
+	GetDeviceList();
 	GetUserHistoryList();
 	//GetUserHistoryDetail();
 	//DeleteUserHistoryList();
@@ -48,8 +48,12 @@ function Login (){
 		success: function (data, statusText, xhr){
 			access_token =  data.access_token;
 			refresh_token = data.refresh_token;
-			console.log(data);
-			console.log(xhr.status);
+			SetResult("Login", data, xhr);
+			// $("#result").append("<h2>Login</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data, null, 4) + "</pre>");	
+			// console.log(JSON.stringify(data, null, 4));
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
@@ -69,7 +73,11 @@ function Logout(){
 		data: data,
 		async: false,
 		success: function (data, statusText, xhr){
-			console.log(xhr.status);
+			SetResult("Logout", data, xhr);
+			// $("#result").append("<h2>Logout</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data, null, 4) + "</pre>");
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
@@ -88,8 +96,13 @@ function Refresh(){
 		success: function (data, statusText, xhr){
 			access_token =  data.access_token;
 			refresh_token = data.refresh_token;
-			console.log(data);
-			console.log(xhr.status);
+			SetResult("Refresh", data, xhr);
+			// $("#result").append("<h2>Refresh</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data, null, 4) + "</pre>");
+			// console.log(xhr.status);
+			// console.log(data);
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
@@ -105,8 +118,12 @@ function GetProfile(){
 		},
 		async: false,
 		success: function (data, statusText, xhr){
-			console.log(data);
-			console.log(xhr.status);
+			SetResult("Get Profile", data, xhr);
+			// $("#result").append("<h2>Get Profile</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data, null, 4) + "</pre>");
+			// console.log(data);
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
@@ -130,7 +147,11 @@ function PutProfile(){
 		data: data,
 		async: false,
 		success: function (data, statusText, xhr){
-			console.log(xhr.status);
+			SetResult("Modify Profile", data, xhr);
+			// $("#result").append("<h2>Modify Profile</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data, null, 4) + "</pre>");
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
@@ -152,15 +173,19 @@ function CreateDevice(){
 		data: data,
 		async: false,
 		success: function (data, statusText, xhr){
-			console.log(data);
-			console.log(xhr.status);
+			SetResult("Create Device", data, xhr);
+			// $("#result").append("<h2>Create Device</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data) + "</pre>");
+			// console.log(data);
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
 }
-function GetDeviecList(){
+function GetDeviceList(){
 	$.ajax({
 		url: 'http://'+ ip + ':' + port + '/api/v2/device',
 		type: 'GET', 
@@ -169,8 +194,12 @@ function GetDeviecList(){
 		},
 		async: false,
 		success: function (data, statusText, xhr){
-			console.log(data);
-			console.log(xhr.status);
+			SetResult("Get Device List", data, xhr);
+			// $("#result").append("<h2>Get Device List</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data) + "</pre>");
+			// console.log(data);
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
@@ -186,8 +215,12 @@ function GetUserHistoryList(){
 		},
 		async: false,
 		success: function (data, statusText, xhr){
-			console.log(data);
-			console.log(xhr.status);
+			SetResult("Get User History List", data, xhr);
+			// $("#result").append("<h2>Get User History List</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data) + "</pre>");
+			// console.log(data);
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
@@ -203,8 +236,12 @@ function GetUserHistoryDetail(){
 		},
 		async: false,
 		success: function (data, statusText, xhr){
-			console.log(data);
-			console.log(xhr.status);
+			SetResult("Get User History Detail", data, xhr);
+			// $("#result").append("<h2>Get User History Detail</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data) + "</pre>");
+			// console.log(data);
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
@@ -225,10 +262,19 @@ function LogoutAllUser(){
 		data: data,
 		async: false,
 		success: function (data, statusText, xhr){
-			console.log(xhr.status);
+			SetResult("Logout All User", data, xhr);
+			// $("#result").append("<h2>Logout All User</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data) + "</pre>");
+			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
+}
+function SetResult(name, data, xhr) {
+	$("#result").append("<h2>"+name+"</h2>");
+	$("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+	$("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data, null, 4) + "</pre>");	
 }
