@@ -11,9 +11,9 @@ $(document).ready(function() {
 		ip = $("#inputIP").val();
 		port = $("#inputPort").val();
 		FB_token = $("#inputToken").val();
-		ip = "210.200.13.224";
-		port = "10001";
-		FB_token = "CAAWaCNd8vigBAFlAGVEdIMV8o731fjBfy1QpxmFpBM70GwnO9uVjXiPvVPZCuC5NaX7Pql4kBMJF0ON67xw5I0FRhCqXGqqTyCBimimZBvWFL3P1woffCBJ7g6c0kO7qCvIYOvvOIgamNCjKAnviRzEqvIZC4y52iakeZAPy377ny6YPU9lsXkAK0t546wZBllhR0qqW9LBhyvtIuAZCOy";
+		// ip = "210.200.13.224";
+		// port = "10001";
+		// FB_token = "CAAWaCNd8vigBAFlAGVEdIMV8o731fjBfy1QpxmFpBM70GwnO9uVjXiPvVPZCuC5NaX7Pql4kBMJF0ON67xw5I0FRhCqXGqqTyCBimimZBvWFL3P1woffCBJ7g6c0kO7qCvIYOvvOIgamNCjKAnviRzEqvIZC4y52iakeZAPy377ny6YPU9lsXkAK0t546wZBllhR0qqW9LBhyvtIuAZCOy";
 		TestAPI(ip, port, FB_token);
 		$("#inputIP").val("");
 		$("#inputPort").val("");
@@ -30,9 +30,10 @@ function TestAPI(){
 	PutProfile();
 	CreateDevice();
 	GetDeviceList();
+	PostDatatoSitewhere();
 	GetUserHistoryList();
-	//GetUserHistoryDetail();
-	//DeleteUserHistoryList();
+	GetUserHistoryDetail();
+	DeleteUserHistoryList();
 	LogoutAllUser();
 }
 function Login (){
@@ -206,6 +207,223 @@ function GetDeviceList(){
 		}
 	});
 }
+function PostDatatoSitewhere(){
+	data = JSON.stringify({
+  "locations":[
+    {
+      "latitude":25.0605492,
+      "longitude":121.6473738,
+      "elevation":5,
+      "eventDate":"2015-06-18T16:50:11.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "latitude":25.0605492,
+      "longitude":121.6473738,
+      "elevation":5,
+      "eventDate":"2015-06-18T16:50:12.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "latitude":25.0605492,
+      "longitude":121.6473738,
+      "elevation":5,
+      "eventDate":"2015-06-18T16:50:13.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "latitude":25.0605492,
+      "longitude":121.6473738,
+      "elevation":5,
+      "eventDate":"2015-06-18T16:50:14.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "latitude":25.0605492,
+      "longitude":121.6473738,
+      "elevation":5,
+      "eventDate":"2015-06-18T16:50:15.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "latitude":25.0605492,
+      "longitude":121.6473738,
+      "elevation":5,
+      "eventDate":"2015-06-18T16:50:16.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "latitude":25.0605492,
+      "longitude":121.6473738,
+      "elevation":5,
+      "eventDate":"2015-06-18T16:50:17.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "latitude":25.0605492,
+      "longitude":121.6473738,
+      "elevation":5,
+      "eventDate":"2015-06-18T16:50:18.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    }
+  ],
+  "measurements":[
+    {
+      "measurements":{
+        "Distance":0,
+        "Calories":0,
+        "Speed":0,
+        "BPS":0,
+        "Cadence":0
+      },
+      "eventDate":"2015-06-18T16:50:11.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "measurements":{
+        "Distance":0,
+        "Calories":0,
+        "Speed":0,
+        "BPS":0,
+        "Cadence":0
+      },
+      "eventDate":"2015-06-18T16:50:12.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "measurements":{
+        "Distance":0,
+        "Calories":0,
+        "Speed":0,
+        "BPS":0,
+        "Cadence":0
+      },
+      "eventDate":"2015-06-18T16:50:13.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "measurements":{
+        "Distance":0,
+        "Calories":0,
+        "Speed":0,
+        "BPS":0,
+        "Cadence":0
+      },
+      "eventDate":"2015-06-18T16:50:14.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "measurements":{
+        "Distance":0,
+        "Calories":0,
+        "Speed":0,
+        "BPS":0,
+        "Cadence":0
+      },
+      "eventDate":"2015-06-18T16:50:15.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "measurements":{
+        "Distance":0,
+        "Calories":0,
+        "Speed":0,
+        "BPS":0,
+        "Cadence":0
+      },
+      "eventDate":"2015-06-18T16:50:16.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "measurements":{
+        "Distance":0,
+        "Calories":0,
+        "Speed":0,
+        "BPS":0,
+        "Cadence":0
+      },
+      "eventDate":"2015-06-18T16:50:17.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    },
+    {
+      "measurements":{
+        "Distance":0,
+        "Calories":0,
+        "Speed":0,
+        "BPS":0,
+        "Cadence":0
+      },
+      "eventDate":"2015-06-18T16:50:18.000+0800",
+      "metadata":{
+        "date":"2015-06-18_16:50:11"
+      }
+    }
+	],
+  "alerts":[
+	  {
+      "eventDate":"2015-06-18T16:50:11.000+0800",
+			"type":"summary",
+      "metadata":{
+        "Duration":7,
+        "TotalDistance":0,
+        "TotalCalories":0,
+        "AvgSpeed":0,
+        "AvgBps":0,
+        "AvgCadence":0,
+        "AvgAltitude":5
+      }
+    }
+  ],
+  "hardwareId":"leo-hwid-test"
+});
+	$.ajax({
+		url: 'https://api.iot.openlab.tw/sitewhere/api/devices/'+hardware_id+'/batch',
+		type: 'POST', 
+		beforeSend: function(xhr) { 
+			xhr.setRequestHeader("Authorization", "Basic YWRtaW46TVJEIykpbXJkMzAw");
+			xhr.setRequestHeader("Content-Type", "application/json");
+		},
+		data: data,
+		async: false,
+		success: function (data, statusText, xhr){	
+			SetResult("Post Data to Sitewhere", data, xhr);
+			history_id = data.createdAlerts[0].id;
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+			console.log(jqXHR, textStatus, errorThrown);
+		}
+	});
+}
 function GetUserHistoryList(){
 	$.ajax({
 		url: 'http://'+ ip + ':' + port + '/api/v2/history_list/'+hardware_id,
@@ -229,7 +447,7 @@ function GetUserHistoryList(){
 }
 function GetUserHistoryDetail(){
 	$.ajax({
-		url: 'http://'+ ip + ':' + port + '/api/v2/history_detail/5588c636e4b034996f5c75f9',
+		url: 'http://'+ ip + ':' + port + '/api/v2/history_detail/'+history_id,
 		type: 'GET', 
 		beforeSend: function(xhr) { 
 			xhr.setRequestHeader("X-API-TOKEN", access_token); 
@@ -248,7 +466,27 @@ function GetUserHistoryDetail(){
 		}
 	});
 }
-function DeleteUserHistoryList(){}
+function DeleteUserHistoryList(){
+	$.ajax({
+		url: 'http://'+ ip + ':' + port + '/api/v2/history_list/'+history_id,
+		type: 'DELETE', 
+		beforeSend: function(xhr) { 
+			xhr.setRequestHeader("X-API-TOKEN", access_token); 
+		},
+		async: false,
+		success: function (data, statusText, xhr){
+			SetResult("Delete User History List", data, xhr);
+			// $("#result").append("<h2>Get User History Detail</h2>");
+			// $("#result").append("<h4>Status Code:</h4> " + "<p style='color:red'>" + xhr.status + "</p>" );
+			// $("#result").append("<h4>Response:</h4> " + "<pre style='color:blue'>" + JSON.stringify(data) + "</pre>");
+			// console.log(data);
+			// console.log(xhr.status);
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+			console.log(jqXHR, textStatus, errorThrown);
+		}
+	});
+}
 function LogoutAllUser(){
 	data = JSON.stringify({
 			"refresh_token": refresh_token 
