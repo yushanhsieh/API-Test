@@ -7,17 +7,15 @@ var hardware_id;
 var history_id;
 $(document).ready(function() {
 	$("#testForm").submit(function(event){
+		$("#result").html("");
 		event.preventDefault();
 		ip = $("#inputIP").val();
 		port = $("#inputPort").val();
 		FB_token = $("#inputToken").val();
-		// ip = "210.200.13.224";
-		// port = "10001";
-		// FB_token = "CAAWaCNd8vigBAFlAGVEdIMV8o731fjBfy1QpxmFpBM70GwnO9uVjXiPvVPZCuC5NaX7Pql4kBMJF0ON67xw5I0FRhCqXGqqTyCBimimZBvWFL3P1woffCBJ7g6c0kO7qCvIYOvvOIgamNCjKAnviRzEqvIZC4y52iakeZAPy377ny6YPU9lsXkAK0t546wZBllhR0qqW9LBhyvtIuAZCOy";
 		TestAPI(ip, port, FB_token);
-		$("#inputIP").val("");
-		$("#inputPort").val("");
-		$("#inputToken").val("");
+		// $("#inputIP").val("");
+		// $("#inputPort").val("");
+		// $("#inputToken").val("");
 	});
 });
 
@@ -57,6 +55,7 @@ function Login (){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Login Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -81,6 +80,7 @@ function Logout(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Logout Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -106,6 +106,7 @@ function Refresh(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Refresh Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -127,6 +128,7 @@ function GetProfile(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Get Profile Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -155,6 +157,7 @@ function PutProfile(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Modify Profile Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -182,6 +185,7 @@ function CreateDevice(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Create Device Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -203,6 +207,7 @@ function GetDeviceList(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Get Device List Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -420,6 +425,7 @@ function PostDatatoSitewhere(){
 			history_id = data.createdAlerts[0].id;
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Post Data to Sitewhere Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -441,6 +447,7 @@ function GetUserHistoryList(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Get User History List Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -462,6 +469,7 @@ function GetUserHistoryDetail(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Get User History Detail Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -483,6 +491,7 @@ function DeleteUserHistoryList(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Delete User History List Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
@@ -507,6 +516,7 @@ function LogoutAllUser(){
 			// console.log(xhr.status);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
+			$("#result").append("<h2>Logout All User Fail</h2>");
 			console.log(jqXHR, textStatus, errorThrown);
 		}
 	});
